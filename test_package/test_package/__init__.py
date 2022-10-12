@@ -1,2 +1,1 @@
-# Anything that might require initialization during import
-
+from test_package import ret
