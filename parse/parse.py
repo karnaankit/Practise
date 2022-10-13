@@ -19,5 +19,5 @@ def parse(file):
 
 f = open('data.txt')
 parse(f)
-print(df)
+df.to_csv('data.csv', index=False)
 
