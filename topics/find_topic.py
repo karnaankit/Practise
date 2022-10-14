@@ -26,8 +26,7 @@ with open('top_20_bigram.txt', "w") as f:
 with open('top_20_trigram.txt', "w") as f1:
     f1.write(json.dumps(top_20_trigram, indent=4))
 
-topics_1 = defaultdict(list)
-topics_2 = defaultdict(list)
+topics = defaultdict(list)
 with open('urls.csv') as file:
     csvreader = csv.reader(file)
     for row in csvreader:
@@ -37,17 +36,15 @@ with open('urls.csv') as file:
         c = 0
         for item1 in bigram:
             if item1 in top_20_bigram:
-                if item1 in topics_1[row[5]]:
+                if item1 in topics[row[5]]:
                     continue
-                topics_1[row[5]].append(item1)
+                topics[row[5]].append(item1)
         trigram = ngrams.generate_ngrams(data, 3)
         for item2 in trigram:
             if item2 in top_20_trigram:
-                if item2 in topics_2[row[5]]:
+                if item2 in topics[row[5]]:
                     continue
-                topics_2[row[5]].append(item2)
-df1 = pd.DataFrame(topics_1.items(), columns=['Notes', 'Bigram'])
-df2 = pd.DataFrame(topics_2.items(), columns=['Notes', 'Trigram'])
-df = pd.merge(df1, df2, on='Notes', how='outer')
-df = df[['Bigram', 'Trigram', 'Notes']]
+                topics[row[5]].append(item2)
+df1 = pd.DataFrame(topics.items(), columns=['Notes', 'Ngram'])
+df = df1[['Ngram', 'Notes']]
 df.to_csv('topics.csv')
