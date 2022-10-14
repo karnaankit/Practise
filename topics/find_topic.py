@@ -5,7 +5,8 @@ from operator import itemgetter
 from test_package import ngrams
 from collections import defaultdict
 
-topics = dict()
+topics_1 = dict()
+topics_2 = dict()
 count_bigram = defaultdict(int)
 count_trigram = defaultdict(int)
 with open("urls.csv") as file:
@@ -35,10 +36,11 @@ with open('urls.csv') as file:
         bigram = ngrams.generate_ngrams(data, 2)
         for item1 in bigram:
             if item1 in top_20_bigram:
-                topics[row[5]] = item1
+                topics_1[row[5]] = item1
         trigram = ngrams.generate_ngrams(data, 3)
         for item2 in trigram:
             if item2 in top_20_trigram:
-                topics[row[5]] = item2
-df = pd.DataFrame.from_dict(topics, orient='index')
-df.to_csv('topics.csv')
+                topics_2[row[5]] = item2
+df1 = pd.DataFrame.from_dict(topics_1, orient='index')
+df2 = pd.DataFrame.from_dict(topics_2, orient='index')
+pd.merge(df1, df2, how='outer', left_index=True, right_index=True).to_csv('topics.csv')
