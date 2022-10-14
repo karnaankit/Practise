@@ -4,7 +4,10 @@ import pandas as pd
 from operator import itemgetter
 from test_package import ngrams
 from collections import defaultdict
-STATES = ['Alabama', 'Alaska', 'Arizona', 'Arkansas', 'California', 'Colorado', 'Connecticut', 'Delaware', 'Florida', 'Georgia', 'Hawaii', 'Idaho', 'Illinois', 'Indiana', 'Iowa', 'Kansas', 'Kentucky', 'Louisiana', 'Maine', 'Maryland', 'Massachusetts', 'Michigan', 'Minnesota', 'Mississippi', 'Missouri', 'Montana', 'Nebraska', 'Nevada', 'New Hampshire', 'New Jersey', 'New Mexico', 'New York', 'North Carolina', 'North Dakota', 'Ohio', 'Oklahoma', 'Oregon', 'Pennsylvania', 'Rhode Island', 'South Carolina', 'South Dakota', 'Tennessee', 'Texas', 'Utah', 'Vermont', 'Virginia', 'Washington', 'West Virginia', 'Wisconsin', 'Wyoming', 'New', 'North', 'South']
+from difflib import SequenceMatcher
+def similar(a, b):
+    return SequenceMatcher(None, a, b).ratio()
+STATES = ['Alabama', 'Alaska', 'Arizona', 'Arkansas', 'California', 'Colorado', 'Connecticut', 'Delaware', 'Florida', 'Georgia', 'Hawaii', 'Idaho', 'Illinois', 'Indiana', 'Iowa', 'Kansas', 'Kentucky', 'Louisiana', 'Maine', 'Maryland', 'Massachusetts', 'Michigan', 'Minnesota', 'Mississippi', 'Missouri', 'Montana', 'Nebraska', 'Nevada', 'New Hampshire', 'New Jersey', 'New Mexico', 'New York', 'North Carolina', 'North Dakota', 'Ohio', 'Oklahoma', 'Oregon', 'Pennsylvania', 'Rhode Island', 'South Carolina', 'South Dakota', 'Tennessee', 'Texas', 'Utah', 'Vermont', 'Virginia', 'Washington', 'West Virginia', 'Wisconsin', 'Wyoming']
 
 count_bigram = defaultdict(int)
 count_trigram = defaultdict(int)
@@ -36,12 +39,12 @@ with open('urls.csv') as file:
         data = data.split('--')[0]
         trigram = ngrams.generate_ngrams(data, 3)
         for item2 in trigram:
+            for state in STATES:
+                if similar(state, item2) > 0.5:
+                    flag1 = 1
+            if flag1 is 1:
+                continue
             if item2 in top_20_trigram:
-                for a in item2.split():
-                    if a in STATES:
-                        flag1 = 1
-                if flag1 is 1:
-                    continue
                 flag = 1
                 if item2 in topics[row[5]]:
                     continue
@@ -51,8 +54,8 @@ with open('urls.csv') as file:
         for item1 in bigram:
             if flag is 1:
                 continue
-            for a in item1.split():
-                if a in STATES:
+            for state in STATES:
+                if similar(state, item1) > 0.5:
                     flag1 = 1
             if flag1 is 1:
                 continue
