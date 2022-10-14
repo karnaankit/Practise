@@ -11,14 +11,13 @@ with open("urls.csv") as file:
     csvreader = csv.reader(file)
     for row in csvreader:
         data = row[5]
-        if '--' in data:
-            data = data.split('--')[0]
-            bigram = ngrams.generate_ngrams(data, 2)
-            for item1 in bigram:
-                count_bigram[item1] += 1
-            trigram = ngrams.generate_ngrams(data, 3)
-            for item2 in trigram:
-                count_trigram[item2] += 1
+        data = data.split('--')[0]
+        bigram = ngrams.generate_ngrams(data, 2)
+        for item1 in bigram:
+            count_bigram[item1] += 1
+        trigram = ngrams.generate_ngrams(data, 3)
+        for item2 in trigram:
+            count_trigram[item2] += 1
 top_20_bigram = dict(sorted(count_bigram.items(), key=itemgetter(1), reverse=True)[:20])
 top_20_trigram = dict(sorted(count_trigram.items(), key=itemgetter(1), reverse=True)[:20])
 with open('top_20_bigram.txt', "w") as f:
