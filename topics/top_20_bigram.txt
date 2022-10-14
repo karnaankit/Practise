@@ -1,20 +1,22 @@
-Note added   827
-North Carolina   95
-Department of   90
-added 6613   76
-added 91515   71
-of the   69
-Board of   55
-added 61213   53
-Travel and   51
-and Tourism   49
-Tourism Site   38
-Site for   38
-State of   35
-Office of   34
-Commission Note   33
-Division of   31
-added 111215   30
-added 82815   29
-Authority Note   28
-6613 1808   26
+{
+    "North Carolina": 95,
+    "Travel Tourism": 48,
+    "Tourism Site": 38,
+    "State Board": 23,
+    "National Guard": 20,
+    "Carolina Department": 17,
+    "The North": 17,
+    "New York": 15,
+    "West Virginia": 15,
+    "Virginia Department": 14,
+    "South Carolina": 13,
+    "Washington State": 13,
+    "Board Examiners": 13,
+    "Public Health": 12,
+    "Economic Development": 12,
+    "NC Department": 12,
+    "York State": 11,
+    "Department Education": 11,
+    "Department Transportation": 10,
+    "Cooperative Extension": 10
+}
