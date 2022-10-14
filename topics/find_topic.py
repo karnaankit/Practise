@@ -30,21 +30,24 @@ topics = defaultdict(list)
 with open('urls.csv') as file:
     csvreader = csv.reader(file)
     for row in csvreader:
+        flag = 0
         data = row[5]
         data = data.split('--')[0]
+        trigram = ngrams.generate_ngrams(data, 3)
+        for item2 in trigram:
+            if item2 in top_20_trigram:
+                flag = 1
+                if item2 in topics[row[5]]:
+                    continue
+                topics[row[5]].append(item2)
         bigram = ngrams.generate_ngrams(data, 2)
-        c = 0
         for item1 in bigram:
+            if flag is 1:
+                continue
             if item1 in top_20_bigram:
                 if item1 in topics[row[5]]:
                     continue
                 topics[row[5]].append(item1)
-        trigram = ngrams.generate_ngrams(data, 3)
-        for item2 in trigram:
-            if item2 in top_20_trigram:
-                if item2 in topics[row[5]]:
-                    continue
-                topics[row[5]].append(item2)
 df1 = pd.DataFrame(topics.items(), columns=['Notes', 'Ngram'])
 df = df1[['Ngram', 'Notes']]
 df.to_csv('topics.csv')
