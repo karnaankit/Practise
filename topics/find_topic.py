@@ -35,13 +35,23 @@ with open('urls.csv') as file:
         data = row[5]
         data = data.split('--')[0]
         bigram = ngrams.generate_ngrams(data, 2)
+        c = 0
         for item1 in bigram:
             if item1 in top_20_bigram:
-                topics_1[row[5]] = item1
+                if c is 0:
+                    topics_1[row[5]] = item1
+                else:
+                    topics_1[row[5]+'_'+str(c)] = item1
+                c += 1
         trigram = ngrams.generate_ngrams(data, 3)
+        c = 0
         for item2 in trigram:
             if item2 in top_20_trigram:
-                topics_2[row[5]] = item2
+                if c is 0:
+                    topics_2[row[5]] = item2
+                else:
+                    topics_2[row[5] + '_' + str(c)] = item2
+                c += 1
 df1 = pd.DataFrame(topics_1.items(), columns=['Notes', 'Bigram'])
 df2 = pd.DataFrame(topics_2.items(), columns=['Notes', 'Trigram'])
 df = pd.merge(df1, df2, on='Notes', how='outer')
