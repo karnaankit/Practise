@@ -37,10 +37,14 @@ with open('urls.csv') as file:
         c = 0
         for item1 in bigram:
             if item1 in top_20_bigram:
+                if item1 in topics_1[row[5]]:
+                    continue
                 topics_1[row[5]].append(item1)
         trigram = ngrams.generate_ngrams(data, 3)
         for item2 in trigram:
             if item2 in top_20_trigram:
+                if item2 in topics_2[row[5]]:
+                    continue
                 topics_2[row[5]].append(item2)
 df1 = pd.DataFrame(topics_1.items(), columns=['Notes', 'Bigram'])
 df2 = pd.DataFrame(topics_2.items(), columns=['Notes', 'Trigram'])

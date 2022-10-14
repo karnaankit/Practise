@@ -1,8 +1,8 @@
 ,Bigram,Trigram,Notes
-0,"['Travel Tourism', 'Tourism Site', 'Travel Tourism', 'Tourism Site']","['Travel Tourism Site', 'Travel Tourism Site']",Travel and Tourism Site for Vermont -- Note added 6/6/13 19:19
+0,"['Travel Tourism', 'Tourism Site']",['Travel Tourism Site'],Travel and Tourism Site for Vermont -- Note added 6/6/13 19:19
 1,['Virginia Department'],,"2-1-1 VIRGINIA is a service of the Virginia Department of Social Services provided in partnership with the Council of Community Services, the Family Resource and Referral Center, The Planning Council, the United Way of Central Virginia, and the United Way of Greater Richmond and Petersburg. -- Note added 5/27/14 14:14"
 2,['Virginia Department'],,"2-1-1 VIRGINIA is a service of the Virginia Department of Social Services provided in partnership with the Council of Community Services, the Family Resource and Referral Center, The Planning Council, the United Way of Central Virginia, and the United Way of Greater Richmond and Petersburg. -- Note added 1/10/14 19:17"
-3,"['New York', 'York State', 'Department Transportation', 'New York', 'York State']","['New York State', 'New York State']","511 NY (New York State Department of Transportation), the free, official one-stop, all-encompassing telephone and Web service offering  information on transportation services and conditions throughout New York State.  -- Note added 1/24/14 14:34"
+3,"['New York', 'York State', 'Department Transportation']",['New York State'],"511 NY (New York State Department of Transportation), the free, official one-stop, all-encompassing telephone and Web service offering  information on transportation services and conditions throughout New York State.  -- Note added 1/24/14 14:34"
 4,['Cooperative Extension'],,Alabama Cooperative Extension System -- Note added 6/12/13 16:37
 5,['Cooperative Extension'],,New Mexico Cooperative Extension Publications -- Note added 7/25/13 17:38
 6,['Public Health'],,Alabama Department of Public Health -- Note added 6/12/13 16:40
@@ -21,10 +21,10 @@
 19,['State Board'],,Arkansas State Board of Collection Agencies -- Note added 11/18/13 15:45
 20,"['New York', 'York State']",['New York State'],New York State Public Service Commissionâ€šÃ„Ã´s Consumer Web Site -- Note added 1/10/14 19:17
 21,['State Board'],,Arizona State Board of Dental Examiners -- Note added 12/11/13 13:50
-22,"['North Carolina', 'North Carolina', 'Carolina Department']","['North Carolina Department', 'Department Cultural Resources']","USS North Carolina Battleship, North Carolina Department of Cultural Resources -- Note added 3/20/14 17:19"
+22,"['North Carolina', 'Carolina Department']","['North Carolina Department', 'Department Cultural Resources']","USS North Carolina Battleship, North Carolina Department of Cultural Resources -- Note added 3/20/14 17:19"
 23,['North Carolina'],['North Carolina Board'],North Carolina Board of Massage & Bodywork Therapy -- Note added 9/11/15 18:20
 24,['Public Health'],,"California Environmental Health Tracking Program, California Department of Public Health -- Note added 10/24/14 12:09"
-25,"['North Carolina', 'North Carolina']",,"College Foundation of North Carolina, aÂ¬â€ service of the StateÂ¬â€ of North Carolina -- Note added 7/24/13 16:09"
+25,['North Carolina'],,"College Foundation of North Carolina, aÂ¬â€ service of the StateÂ¬â€ of North Carolina -- Note added 7/24/13 16:09"
 26,['Economic Development'],,Maryland Department of Business and Economic Development -- Note added 1/10/14 19:17
 27,['Department Transportation'],,"Coliseum Boulevard Plume (CBP), an area in Montgomery, Alabama, where the groundwater 10-50 feet below land surface contains trichloroethylene (TCE).  Investigation, management, and cleanup of the groundwater is being conducted by the https://www.dot.state.al.us/ Alabama Department of Transportation (ALDOT). -- Note added 9/24/14 16:14"
 28,"['Travel Tourism', 'Tourism Site']",['Travel Tourism Site'],Travel and Tourism Site for Colorado -- Note added 6/6/13 19:23
@@ -54,7 +54,7 @@
 52,['Public Health'],,"Florida Environmental Public Health Tracking, Florida Department of Health This web portal was supported by Cooperative Agreement Number 5U38EH000941 from the Centers for Disease Control and Prevention. Its contents are solely the responsibility of the authors (FL Tracking Team) and do not necessarily represent the official views of the Centers for Disease Control and Prevention. -- Note added 7/9/15 15:15"
 53,['National Guard'],,Georgia National Guard -- Note added 1/23/14 13:59
 54,['Department Education'],,State of Georgia Department of Education -- Note added 6/6/13 18:08
-55,"['Department Education', 'State Board', 'Department Education']",,"GEAR UP Mississippi operates as part of the Institutions of Higher Learning, Office of Academic and Student Affairs in collaboration with the Mississippi Department of Education, State Board for Community and Junior Colleges and community and national partners. Funding is provided by the United States Department of Education. -- Note added 7/23/14 17:21"
+55,"['Department Education', 'State Board']",,"GEAR UP Mississippi operates as part of the Institutions of Higher Learning, Office of Academic and Student Affairs in collaboration with the Mississippi Department of Education, State Board for Community and Junior Colleges and community and national partners. Funding is provided by the United States Department of Education. -- Note added 7/23/14 17:21"
 56,['National Guard'],,Lousiana National Guard -- Note added 1/22/14 19:28
 57,"['Travel Tourism', 'Tourism Site']",['Travel Tourism Site'],"Hawaii Tourism Authority, Travel and Tourism Site for Hawaii -- Note added 2/10/15 14:00"
 58,"['North Carolina', 'Carolina Department']","['North Carolina Department', 'Department Agriculture Consumer', 'Agriculture Consumer Services']","Got to Be NC Agriculture, Goodness Grows in NC, North Carolina Department of Agriculture & Consumer Services -- Note added 6/28/13 16:56"
@@ -66,7 +66,7 @@
 64,['Economic Development'],['Economic Development Authority'],Guam Economic Development Authority (GEDA) web site. GEDA is an autonomous agency of the Government of Guam and a Guam public corporation. -- Note added 6/7/13 17:59
 65,['Economic Development'],['Economic Development Authority'],Iowa Economic Development Authority -- Note added 11/21/13 15:05
 66,['National Guard'],,Iowa National Guard -- Note added 1/23/14 14:03
-67,"['The North', 'North Carolina', 'Public Health', 'The North', 'North Carolina', 'North Carolina']","['The North Carolina', 'North Carolina Division', 'Division Public Health', 'The North Carolina']","The North Carolina Division of Public Health, Injury and Violence Prevention Branch, Youth Suicide Prevention Program works in collaboration with The North Carolina Youth Suicide Prevention Task Force to address youth suicide prevention in North Carolina. -- Note added 11/21/13 20:33"
+67,"['The North', 'North Carolina', 'Public Health']","['The North Carolina', 'North Carolina Division', 'Division Public Health']","The North Carolina Division of Public Health, Injury and Violence Prevention Branch, Youth Suicide Prevention Program works in collaboration with The North Carolina Youth Suicide Prevention Task Force to address youth suicide prevention in North Carolina. -- Note added 11/21/13 20:33"
 68,['North Carolina'],"['State North Carolina', 'North Carolina Division']",Julian F. Keith Alcohol and Drug Abuse Treatment Center. JFK ADATC operates under the authority of the State of North Carolina through the Division of State Operated Healthcare Facilities -- Note added 9/22/15 17:00
 69,['National Guard'],,Kentucky National Guard -- Note added 1/23/14 14:03
 70,"['Travel Tourism', 'Tourism Site']",['Travel Tourism Site'],Travel and Tourism Site for Kentucky -- Note added 6/6/13 19:38
@@ -116,7 +116,7 @@
 114,['North Carolina'],,North Carolina Social Work Certification and Licensure Board -- Note added 9/22/15 14:10
 115,"['The North', 'North Carolina']",['The North Carolina'],"The North Carolina Center for Global Logistics is a collaborative effort between community colleges, universities, and industry partners focused on developing a highly trained workforce for the logistics and supply chain industry. -- Note added 9/14/15 20:47"
 116,['North Carolina'],['North Carolina Board'],North Carolina Board of Chiropractic Examiners -- Note added 9/14/15 20:37
-117,"['North Carolina', 'North Carolina', 'Carolina Department']","['North Carolina Department', 'Department Cultural Resources']","North Carolina Civil War Sesquicentennial, North Carolina Department of Cultural Resources -- Note added 11/12/15 14:54"
+117,"['North Carolina', 'Carolina Department']","['North Carolina Department', 'Department Cultural Resources']","North Carolina Civil War Sesquicentennial, North Carolina Department of Cultural Resources -- Note added 11/12/15 14:54"
 118,['North Carolina'],['North Carolina Office'],North Carolina Office of the Commissioner of Banks (NCCOB) -- Note added 11/19/13 18:51
 119,"['North Carolina', 'Carolina Department']",['North Carolina Department'],North Carolina Department of Commerce -- Note added 7/24/13 16:42
 120,['NC Department'],,N.C. Department of Environment and Natural Resources -- Note added 7/24/13 16:27
@@ -128,18 +128,18 @@
 126,['North Carolina'],,North Carolina Drought Management Advisory Council -- Note added 11/12/15 14:05
 127,"['The North', 'North Carolina']","['The North Carolina', 'North Carolina Office']",The North Carolina Office of EMS -- Note added 9/15/15 16:07
 128,"['The North', 'North Carolina']",['The North Carolina'],The North Carolina Forest Service operates a system of six Educational State Forests (ESFs) designed to teach the public - especially school children - about the forest environment. -- Note added 9/15/15 16:34
-129,"['North Carolina', 'North Carolina']",,"North Carolina Farm Fresh is a directory of pick-your-own farms, roadside farm markets, and farmers markets throughout North Carolina. It is designed to help the consumer, find the freshest locally grown fruits, vegetables, christmas trees, ornamental plants, flowers, and herbs. -- Note added 9/15/15 16:34"
+129,['North Carolina'],,"North Carolina Farm Fresh is a directory of pick-your-own farms, roadside farm markets, and farmers markets throughout North Carolina. It is designed to help the consumer, find the freshest locally grown fruits, vegetables, christmas trees, ornamental plants, flowers, and herbs. -- Note added 9/15/15 16:34"
 130,"['North Carolina', 'Carolina Department']","['North Carolina Department', 'Department Agriculture Consumer', 'Agriculture Consumer Services']","NC Farm to School program, North Carolina Department of Agriculture and Consumer Services -- Note added 6/12/13 18:34"
 131,['North Carolina'],,"North Carolina Farmworker Health Program (NCFHP), a statewide Migrant Health Voucher Program within the Office of Rural Health -- Note added 11/12/15 13:44"
 132,['North Carolina'],,"Firewise North Carolina,Â¬â€ North Carolina Forest Service -- Note added 6/12/13 18:15"
-133,"['North Carolina', 'North Carolina']",,"North Carolina Forest Action Plan, North Carolina Forest Service -- Note added 11/12/15 13:40"
+133,['North Carolina'],,"North Carolina Forest Action Plan, North Carolina Forest Service -- Note added 11/12/15 13:40"
 134,['North Carolina'],,North Carolina Forest Action Plan See historical snapshot at: http://web.archive.org/web/20140517174935/http://ncforestassessment.com/  -- Note added 11/12/15 13:39
 135,['North Carolina'],['State North Carolina'],State of North Carolina -- Note added 1/14/14 13:05
 136,"['North Carolina', 'NC Department']",,"Governor's School of North Carolina, NC Department of Public Instruction -- Note added 6/12/13 18:35"
 137,"['The North', 'North Carolina']",['The North Carolina'],The North Carolina Global TransPark -- Note added 9/15/15 16:39
 138,['North Carolina'],,North Carolina Home Inspetor Licensure Board -- Note added 11/20/13 12:38
 139,"['The North', 'North Carolina']",['The North Carolina'],The North Carolina Interpreters & Transliterators Licensing Board -- Note added 9/15/15 16:45
-140,"['North Carolina', 'North Carolina']",,NCknows is a service that allows North Carolina residents to get help from librarians and use their library resources remotely through a computer. NCknows is a pilot project supported by a grant under the Federally-funded Library Services and Technology Act (LSTA). The project is administered by the State Library of North Carolina in Raleigh with help from a committee of librarians and directors from North Carolina's libraries. -- Note added 11/12/15 13:22
+140,['North Carolina'],,NCknows is a service that allows North Carolina residents to get help from librarians and use their library resources remotely through a computer. NCknows is a pilot project supported by a grant under the Federally-funded Library Services and Technology Act (LSTA). The project is administered by the State Library of North Carolina in Raleigh with help from a committee of librarians and directors from North Carolina's libraries. -- Note added 11/12/15 13:22
 141,"['North Carolina', 'State Board', 'Board Examiners']",['State Board Examiners'],"North Carolina State Board of Examiners of Plumbing, Heating and Fire Sprinkler Contractors -- Note added 9/15/15 16:46"
 142,['North Carolina'],,North Carolina League of Municipalities -- Note added 6/6/13 18:08
 143,['North Carolina'],,the board of Marriage and family therapy of North Carolina -- Note added 9/15/15 16:48
@@ -161,7 +161,7 @@
 159,['State Board'],,NC State Board of Environmental Health Specialist Examiners -- Note added 11/19/13 20:40
 160,['North Carolina'],,North Carolina Seniors' Health Insurance Information Program (SHIIP) -- Note added 1/22/14 19:19
 161,"['North Carolina', 'NC Department', 'Public Health']",,"North Carolina Sickle Cell Syndrome Program, NC Department of Public Health -- Note added 11/12/15 13:09"
-162,"['The North', 'North Carolina', 'North Carolina', 'Carolina Department']","['The North Carolina', 'North Carolina Department']",The North Carolina State Improvement Project (NC SIP ). NC SIP is a program in the Exceptional Children Division of the North Carolina Department of Public Instruction (NC DPI). -- Note added 9/15/15 17:19
+162,"['The North', 'North Carolina', 'Carolina Department']","['The North Carolina', 'North Carolina Department']",The North Carolina State Improvement Project (NC SIP ). NC SIP is a program in the Exceptional Children Division of the North Carolina Department of Public Instruction (NC DPI). -- Note added 9/15/15 17:19
 163,['North Carolina'],,"Thank you for visiting ACCESSNC, your one-stop source for North Carolina economic data and site information. -- Note added 9/15/15 17:19"
 164,['North Carolina'],,North Carolina Social Work Certification and Licensure Board -- Note added 9/22/15 14:12
 165,['NC Department'],"['Department Health Human', 'Health Human Services']","Tobacco Free Schools, NC Department of Health and Human Services -- Note added 2/25/14 13:20"
@@ -211,7 +211,7 @@
 209,['Department Transportation'],,South Dakota Department of Transportation -- Note added 7/17/14 5:53
 210,['Department Transportation'],,"Authorized Service Website for the Arizona Department of Transportation, Motor Vehicle Division -- Note added 1/10/14 19:17"
 211,['North Carolina'],,North Carolina State Health Plan for Teachers and State Employees -- Note added 7/25/14 15:10
-212,"['Public Health', 'Public Health']",['Division Public Health'],"State Laboratory of Public Health, NC Division of Public Health -- Note added 7/26/13 15:11"
+212,['Public Health'],['Division Public Health'],"State Laboratory of Public Health, NC Division of Public Health -- Note added 7/26/13 15:11"
 213,"['New York', 'York State']",['New York State'],"Susquehanna River Basin Commission -Â¬â€ The Susquehanna River Basin Compact, was signed into law on December 24, 1970. The Compact, as adopted by the Congress of the United States, and the legislatures of New York State, Pennsylvania and Maryland, provides the mechanism to guide the conservation, development, and administration of the water resources of the vast river basin. -- Note added 6/26/13 16:30"
 214,['North Carolina'],,"Start Squad, kid's portal to the State Library of North Carolina -- Note added 8/25/14 12:12"
 215,['New York'],,"Staten Island Borough President, New York, NY -- Note added 11/20/13 18:23"
@@ -265,7 +265,7 @@
 263,['National Guard'],,Washington Army National Guard -- Note added 1/23/14 14:03
 264,['National Guard'],,Washington National Guard -- Note added 1/23/14 14:03
 265,['Washington State'],,Washington State Wine Commission -- Note added 11/12/14 6:23
-266,"['North Carolina', 'The North', 'North Carolina']","['The North Carolina', 'North Carolina Office']","The Way We Lived in North Carolina, presented by http://www.ah.dcr.state.nc.us/ The North Carolina Office of Archives & History. -- Note added 8/13/14 17:41"
+266,"['North Carolina', 'The North']","['The North Carolina', 'North Carolina Office']","The Way We Lived in North Carolina, presented by http://www.ah.dcr.state.nc.us/ The North Carolina Office of Archives & History. -- Note added 8/13/14 17:41"
 267,['Cooperative Extension'],,University of Rhode Island Cooperative Extension -- Note added 6/7/13 18:31
 268,['Economic Development'],,Washington Economic Development Finance Authority -- Note added 11/12/14 6:21
 269,['Public Health'],['Division Public Health'],"Women's Health Branch, NC Division of Public Health -- Note added 7/26/13 15:11"
