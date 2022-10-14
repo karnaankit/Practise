@@ -6,8 +6,6 @@ from test_package import ngrams
 from collections import defaultdict
 
 
-topics_1 = dict()
-topics_2 = dict()
 count_bigram = defaultdict(int)
 count_trigram = defaultdict(int)
 with open("urls.csv") as file:
@@ -28,7 +26,8 @@ with open('top_20_bigram.txt', "w") as f:
 with open('top_20_trigram.txt', "w") as f1:
     f1.write(json.dumps(top_20_trigram, indent=4))
 
-
+topics_1 = defaultdict(list)
+topics_2 = defaultdict(list)
 with open('urls.csv') as file:
     csvreader = csv.reader(file)
     for row in csvreader:
@@ -38,20 +37,11 @@ with open('urls.csv') as file:
         c = 0
         for item1 in bigram:
             if item1 in top_20_bigram:
-                if c is 0:
-                    topics_1[row[5]] = item1
-                else:
-                    topics_1[row[5]+'_'+str(c)] = item1
-                c += 1
+                topics_1[row[5]].append(item1)
         trigram = ngrams.generate_ngrams(data, 3)
-        c = 0
         for item2 in trigram:
             if item2 in top_20_trigram:
-                if c is 0:
-                    topics_2[row[5]] = item2
-                else:
-                    topics_2[row[5] + '_' + str(c)] = item2
-                c += 1
+                topics_2[row[5]].append(item2)
 df1 = pd.DataFrame(topics_1.items(), columns=['Notes', 'Bigram'])
 df2 = pd.DataFrame(topics_2.items(), columns=['Notes', 'Trigram'])
 df = pd.merge(df1, df2, on='Notes', how='outer')
