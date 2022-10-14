@@ -5,6 +5,7 @@ from operator import itemgetter
 from test_package import ngrams
 from collections import defaultdict
 
+
 topics_1 = dict()
 topics_2 = dict()
 count_bigram = defaultdict(int)
@@ -41,6 +42,8 @@ with open('urls.csv') as file:
         for item2 in trigram:
             if item2 in top_20_trigram:
                 topics_2[row[5]] = item2
-df1 = pd.DataFrame.from_dict(topics_1, orient='index')
-df2 = pd.DataFrame.from_dict(topics_2, orient='index')
-pd.merge(df1, df2, how='outer', left_index=True, right_index=True).to_csv('topics.csv')
+df1 = pd.DataFrame(topics_1.items(), columns=['Notes', 'Bigram'])
+df2 = pd.DataFrame(topics_2.items(), columns=['Notes', 'Trigram'])
+df = pd.merge(df1, df2, on='Notes')
+df = df[['Bigram', 'Trigram', 'Notes']]
+df.to_csv('topics.csv')
