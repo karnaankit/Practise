@@ -44,6 +44,6 @@ with open('urls.csv') as file:
                 topics_2[row[5]] = item2
 df1 = pd.DataFrame(topics_1.items(), columns=['Notes', 'Bigram'])
 df2 = pd.DataFrame(topics_2.items(), columns=['Notes', 'Trigram'])
-df = pd.merge(df1, df2, on='Notes')
+df = pd.merge(df1, df2, on='Notes', how='outer')
 df = df[['Bigram', 'Trigram', 'Notes']]
 df.to_csv('topics.csv')
