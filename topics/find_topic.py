@@ -18,6 +18,8 @@ with open("urls.csv") as file:
 top_20_bigram = dict(sorted(count_bigram.items(), key=itemgetter(1), reverse=True)[:20])
 top_20_trigram = dict(sorted(count_trigram.items(), key=itemgetter(1), reverse=True)[:20])
 with open('top_20_bigram.txt', "w") as f:
-    print(top_20_bigram, file=f)
+    for key in top_20_bigram:
+        print(key, ' ', top_20_bigram[key], file=f)
 with open('top_20_trigram.txt', "w") as f1:
-    print(top_20_trigram, file=f1)
+    for key in top_20_trigram:
+        print(key, ' ', top_20_trigram[key], file=f1)
