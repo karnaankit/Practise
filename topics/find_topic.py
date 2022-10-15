@@ -65,15 +65,15 @@ df1 = pd.DataFrame(topics.items(), columns=['Notes', 'Ngram'])
 df1["State"] = " "
 ind = 0
 for row in df1.itertuples():
-    for state in STATES:
-        if state.lower() in row[1].lower():
-            state_index[state].append(ind)
-    ind += 1
-ind = 0
-for row in df1.itertuples():
-    for key in state_index:
-        if ind in state_index[key]:
-            df1.at[ind, 'State'] = key
+    unigram = ngrams.generate_ngrams(row[1], 1)
+    bigram = ngrams.generate_ngrams(row[1], 2)
+    for item in unigram:
+        if item in STATES:
+            df1.at[ind, 'State'] = item
+            break
+    for item in bigram:
+        if item in STATES:
+            df1.at[ind, 'State'] = item
             break
     ind += 1
 df = df1[['Ngram', 'State', 'Notes']]
