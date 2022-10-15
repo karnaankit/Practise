@@ -12,6 +12,7 @@ STATES = ['Alabama', 'Alaska', 'Arizona', 'Arkansas', 'California', 'Colorado', 
           'Oklahoma', 'Oregon', 'Pennsylvania', 'Rhode Island', 'South Carolina', 'South Dakota', 'Tennessee', 'Texas',
           'Utah', 'Vermont', 'Virginia', 'Washington', 'West Virginia', 'Wisconsin', 'Wyoming']
 
+state_index = defaultdict(list)
 count_bigram = defaultdict(int)
 count_trigram = defaultdict(int)
 c = int(0)
@@ -29,12 +30,8 @@ with open("urls.csv") as file:
 sorted_bigram = sorted(count_bigram.items(), key=itemgetter(1), reverse=True)
 sorted_trigram = sorted(count_trigram.items(), key=itemgetter(1), reverse=True)
 for state in STATES:
-    for item in sorted_bigram.copy():
-        if state.lower() in item[0].lower():
-            sorted_bigram.remove(item)
-    for item in sorted_trigram.copy():
-        if state.lower() in item[0].lower():
-            sorted_trigram.remove(item)
+    sorted_bigram = [item for item in sorted_bigram if state.lower() not in item[0].lower()]
+    sorted_trigram = [item for item in sorted_trigram if state.lower() not in item[0].lower()]
 top_20_bigram = dict(sorted_bigram[:20])
 top_20_trigram = dict(sorted_trigram[:20])
 with open('top_20_bigram.txt', "w") as f:
@@ -57,9 +54,9 @@ with open('urls.csv') as file:
                     continue
                 topics[row[5]].append(item2)
         bigram = ngrams.generate_ngrams(data, 2)
+        if flag is 1:
+            continue
         for item1 in bigram:
-            if flag is 1:
-                continue
             if item1 in top_20_bigram:
                 if item1 in topics[row[5]]:
                     continue
@@ -70,7 +67,14 @@ ind = 0
 for row in df1.itertuples():
     for state in STATES:
         if state.lower() in row[1].lower():
-            df1.loc[ind] = [row[1], row[2], state]
+            state_index[state].append(ind)
+    ind += 1
+ind = 0
+for row in df1.itertuples():
+    for key in state_index:
+        if ind in state_index[key]:
+            df1.at[ind, 'State'] = key
+            break
     ind += 1
 df = df1[['Ngram', 'State', 'Notes']]
 df.to_csv('topics.csv')
