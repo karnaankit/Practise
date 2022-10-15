@@ -65,13 +65,18 @@ df1 = pd.DataFrame(topics.items(), columns=['Notes', 'Ngram'])
 df1["State"] = " "
 ind = 0
 for row in df1.itertuples():
+    flag = 0
     unigram = ngrams.generate_ngrams(row[1], 1)
     bigram = ngrams.generate_ngrams(row[1], 2)
-    for item in unigram:
+    for item in bigram:
         if item in STATES:
+            flag = 1
             df1.at[ind, 'State'] = item
             break
-    for item in bigram:
+    if flag is 1:
+        ind += 1
+        continue
+    for item in unigram:
         if item in STATES:
             df1.at[ind, 'State'] = item
             break
