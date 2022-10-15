@@ -1,6 +1,5 @@
 {
     "Travel Tourism Site": 38,
-    "North Carolina Department": 15,
     "Travel Tourism Sites": 10,
     "Health Human Services": 7,
     "State University Extension": 6,
@@ -18,5 +17,6 @@
     "State Defense Force": 4,
     "Independent Living Council": 4,
     "US Virgin Islands": 4,
-    "Carolina Department Cultural": 3
+    "Carolina Department Cultural": 3,
+    "Carolina Department Public": 3
 }

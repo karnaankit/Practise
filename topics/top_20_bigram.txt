@@ -5,7 +5,6 @@
     "National Guard": 20,
     "Carolina Department": 17,
     "The North": 17,
-    "Virginia Department": 14,
     "Board Examiners": 13,
     "Public Health": 12,
     "Economic Development": 12,
@@ -18,5 +17,6 @@
     "Development Authority": 10,
     "Virgin Islands": 10,
     "NC Board": 10,
-    "state agencies": 10
+    "state agencies": 10,
+    "Tourism Sites": 10
 }
