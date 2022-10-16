@@ -1,23 +1,23 @@
 import requests
-from selenium import webdriver
 import json
 import time
 import pandas as pd
 from bs4 import BeautifulSoup
-DRIVER_PATH = 'D:/PycharmProjects/daraz/chromedriver.exe'
-driver = webdriver.Chrome(executable_path=DRIVER_PATH)
+df = pd.DataFrame(columns=['Title', 'Unit', 'Price'])
 search_title = 'nuts'
 search_url = 'https://www.daraz.com.np/catalog/?q=' + search_title
-driver.get(search_url)
-time.sleep(5)
-response = driver.page_source
-driver.quit()
-search_soup = BeautifulSoup(response, 'html.parser')
-results = search_soup.find_all('div', {'class': 'gridItem--Yd0sa'})
-df = pd.DataFrame(columns=['Title', 'Unit', 'Price'])
+response = requests.get(search_url)
+search_soup = BeautifulSoup(response.content, 'html.parser')
+results = search_soup.find_all('script')
 for result in results:
+    if 'window.pageData' in result.text:
+        data = result.text
+        data = data[(len('window.pageData=')):]
+        data = json.loads(data)
+for item in data['mods']['listItems']:
+    title = item['name']
+    price = item['price']
     ind = 0
-    title = result.find('a', {'title': True}).get('title')
     for char in title:
         if char in ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']:
             name = title[:ind]
@@ -28,6 +28,5 @@ for result in results:
                     break
             break
         ind += 1
-    price = result.find('span', {'class': 'currency--GVKjl'}).text
-    df.loc[len(df)] = [name, unit, price]
+    df = df.append({'Title': name, 'Unit': unit, 'Price': price}, ignore_index=True)
 df.to_csv(search_title + '.csv', index=False)
