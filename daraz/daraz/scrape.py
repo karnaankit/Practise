@@ -6,7 +6,8 @@ import re
 import os
 
 
-def scrape(search_term):
+def search(search_term):
+
     def get_prices(search_title):
         df = pd.DataFrame(columns=['Title', 'Price'])
         search_url = 'https://www.daraz.com.np/catalog/?q=' + search_title
@@ -34,6 +35,7 @@ def scrape(search_term):
     def normalize_units(data):
         quantity = re.compile(r'(\d+)')
         uni = re.compile(r'(\d+)(\s*)(kg|Kg|KG|kG)')
+        data = re.sub(r'(\s*)(gm|Gm|G|g)', 'gm', data)
         if re.match(uni, data):
             size = int(quantity.search(data).group(1)) * 1000
             data = str(size) + 'gm'
@@ -54,23 +56,25 @@ def scrape(search_term):
                                 'Price': price}, ignore_index=True)
         df.to_csv(os.getcwd()+'/data/'+search_term+'.csv', index=False)
 
-    get_prices(search_term)
-    get_units('title.csv')
-    os.remove('title.csv')
-
-
-if __name__ == '__main__':
-    search = input("Enter search term")
-    path = os.getcwd()+'/data'
-    df1 = pd.DataFrame(columns=['Title', 'Units', 'Amount', 'Normalized unit', 'Price'])
-    if search+'.csv' in os.listdir(path):
-        with open(path+'/'+search+'.csv') as f:
-            csvreader = csv.reader(f)
-            for row in csvreader:
+    def view_data(item):
+        df1 = pd.DataFrame(columns=['Title', 'Units', 'Amount', 'Normalized unit', 'Price'])
+        with open(path + '/' + item + '.csv') as f:
+            csvreader1 = csv.reader(f)
+            for row in csvreader1:
                 if row[0] == 'Title':
                     continue
                 df1 = df1.append({'Title': row[0], 'Units': row[1], 'Amount': row[2], 'Normalized unit': row[3],
-                                'Price': row[4]}, ignore_index=True)
+                                  'Price': row[4]}, ignore_index=True)
             print(df1)
+    path = os.getcwd() + '/data'
+    if search_term + '.csv' in os.listdir(path):
+        view_data(search_term)
     else:
-        scrape(search)
+        get_prices(search_term)
+        get_units('title.csv')
+        os.remove('title.csv')
+        view_data(search_term)
+
+
+if __name__ == '__main__':
+    search('nuts')
