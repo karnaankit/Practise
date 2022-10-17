@@ -76,5 +76,3 @@ def search(search_term):
         view_data(search_term)
 
 
-if __name__ == '__main__':
-    search('nuts')
