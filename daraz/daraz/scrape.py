@@ -20,25 +20,27 @@ def get_prices(search_title):
     df.to_csv('title.csv', index=False)
 
 
+def get_name_unit(row1):
+    result = list()
+    result.append(pattern1.search(row1).group(0))
+    result.append(normalize_units(result[0]))
+    result.append(re.sub(pattern1, '', row1).strip('-').split('-')[0])
+    return result
+
+
+def normalize_units(data):
+    quantity = re.compile(r'(\d+)')
+    uni = re.compile(r'(\d+)(\s*)(gm|Gm|G|g)')
+    if re.match(uni, data):
+        size = int(quantity.search(data).group(1))/1000
+        data = str(size) + 'Kg'
+        return data
+    else:
+        return data
+
+
 def get_units(file):
     df = pd.DataFrame(columns=['Title', 'Units', 'Normalized unit', 'Price'])
-
-    def get_name_unit(row1):
-        result = list()
-        result.append(pattern1.search(row1).group(0))
-        result.append(normalize_units(result[0]))
-        result.append(re.sub(pattern1, '', row1).strip('-').split('-')[0])
-        return result
-
-    def normalize_units(data):
-        quantity = re.compile(r'(\d+)')
-        uni = re.compile(r'(\d+)(\s*)(gm|Gm|G|g)')
-        if re.match(uni, data):
-            size = int(quantity.search(data).group(1))/1000
-            data = str(size) + 'Kg'
-            return data
-        else:
-            return data
     with open(file) as f:
         csvreader = csv.reader(f)
         for row in csvreader:
