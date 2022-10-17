@@ -21,6 +21,15 @@ def get_prices(search_title):
 
 
 def get_units(file):
+    df = pd.DataFrame(columns=['Title', 'Units', 'Normalized unit', 'Price'])
+
+    def get_name_unit(row1):
+        result = list()
+        result.append(pattern1.search(row1).group(0))
+        result.append(normalize_units(result[0]))
+        result.append(re.sub(pattern1, '', row1).strip('-').split('-')[0])
+        return result
+
     def normalize_units(data):
         quantity = re.compile(r'(\d+)')
         uni = re.compile(r'(\d+)(\s*)(gm|Gm|G|g)')
@@ -30,21 +39,14 @@ def get_units(file):
             return data
         else:
             return data
-    df = pd.DataFrame(columns=['Title', 'Units', 'Normalized unit', 'Price'])
     with open(file) as f:
         csvreader = csv.reader(f)
         for row in csvreader:
             if row[0] == 'Title':
                 continue
-            unit = pattern1.search(row[0]).group(0)
-            normalized = normalize_units(unit)
-            name = re.sub(pattern1, '', row[0])
-            if name.split('-')[0] is '':
-                name = name.split('-')[1]
-            else:
-                name = name.split('-')[0]
+            items = get_name_unit(row[0])
             price = row[1]
-            df = df.append({'Title': name, 'Units': unit, 'Normalized unit': normalized, 'Price': price}, ignore_index=True)
+            df = df.append({'Title': items[2], 'Units': items[0], 'Normalized unit': items[1], 'Price': price}, ignore_index=True)
     df.to_csv('unit.csv', index=False)
 
 
