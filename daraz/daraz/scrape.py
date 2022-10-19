@@ -3,7 +3,7 @@ import json
 import pandas as pd
 import csv
 import os
-import utils
+from daraz import utils
 data_dir = "D:/PycharmProjects/daraz/daraz/data/"
 
 
