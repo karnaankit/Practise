@@ -10,14 +10,15 @@ def test_scrape():
     os.remove(data_dir + search_term + '_o.csv')
     os.remove(data_dir + search_term + '.csv')
     scrape.search(search_term)
-    assert len(pd.read_csv(data_dir+search_term+'.csv')) == len(pd.read_csv(data_dir+search_term+'_o.csv'))
+    assert len(pd.read_csv(data_dir + search_term + '.csv')) == len(pd.read_csv(data_dir + search_term + '_o.csv'))
+    assert len(pd.read_csv(data_dir + search_term + '.csv')) and len(pd.read_csv(data_dir + search_term + '_o.csv')) > 1
 
 
 def test_process():
     os.remove(data_dir + search_term + '.csv')
     scrape.process(search_term)
-    assert len(pd.read_csv(data_dir+search_term+'.csv')) == len(pd.read_csv(data_dir+search_term+'_o.csv'))
-    assert len(pd.read_csv(data_dir+search_term+'.csv')) and len(pd.read_csv(data_dir+search_term+'_o.csv')) > 1
+    assert len(pd.read_csv(data_dir + search_term + '.csv')) == len(pd.read_csv(data_dir + search_term + '_o.csv'))
+    assert len(pd.read_csv(data_dir + search_term + '.csv')) and len(pd.read_csv(data_dir + search_term + '_o.csv')) > 1
 
 def test_get_name_unit():
     assert utils.get_name_unit('Peanuts 1kg') == ['1kg', '1000', 'gm', 'Peanuts ']
