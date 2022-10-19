@@ -4,6 +4,7 @@ import pandas as pd
 import csv
 import re
 import os
+data_dir = "D:/PycharmProjects/daraz/daraz/data/"
 
 
 def search(search_term):
@@ -18,7 +19,15 @@ def search(search_term):
             title = item['name']
             price = item['price']
             df = df.append({'Title': title, 'Price': price}, ignore_index=True)
-        df.to_csv('title.csv', index=False)
+        df.to_csv(data_dir+search_title+'_o.csv', index=False)
+    if search_term + '.csv' in os.listdir(data_dir):
+        view_data(search_term)
+    else:
+        get_prices(search_term)
+        process(search_term)
+
+
+def process(search_term):
 
     def get_name_unit(row1):
         amount = re.compile(r'(\d+)')
@@ -54,25 +63,19 @@ def search(search_term):
                 price = row[1]
                 df = df.append({'Title': items[3], 'Units': items[0], 'Amount': items[1], 'Normalized unit': items[2],
                                 'Price': price}, ignore_index=True)
-        df.to_csv(os.getcwd()+'/data/'+search_term+'.csv', index=False)
+        df.to_csv(data_dir+search_term+'.csv', index=False)
 
-    def view_data(item):
-        df1 = pd.DataFrame(columns=['Title', 'Units', 'Amount', 'Normalized unit', 'Price'])
-        with open(path + '/' + item + '.csv') as f:
-            csvreader1 = csv.reader(f)
-            for row in csvreader1:
-                if row[0] == 'Title':
-                    continue
-                df1 = df1.append({'Title': row[0], 'Units': row[1], 'Amount': row[2], 'Normalized unit': row[3],
-                                  'Price': row[4]}, ignore_index=True)
-            print(df1)
-    path = os.getcwd() + '/data'
-    if search_term + '.csv' in os.listdir(path):
-        view_data(search_term)
-    else:
-        get_prices(search_term)
-        get_units('title.csv')
-        os.remove('title.csv')
-        view_data(search_term)
+    get_units(data_dir + search_term + '_o.csv')
+    view_data(search_term)
 
 
+def view_data(item):
+    df1 = pd.DataFrame(columns=['Title', 'Units', 'Amount', 'Normalized unit', 'Price'])
+    with open(data_dir + item + '.csv') as f:
+        csvreader1 = csv.reader(f)
+        for row in csvreader1:
+            if row[0] == 'Title':
+                continue
+            df1 = df1.append({'Title': row[0], 'Units': row[1], 'Amount': row[2], 'Normalized unit': row[3],
+                              'Price': row[4]}, ignore_index=True)
+        print(df1)
