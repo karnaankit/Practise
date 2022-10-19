@@ -41,4 +41,4 @@ def view_data(item):
                 continue
             df1 = df1.append({'Title': row[0], 'Units': row[1], 'Amount': row[2], 'Normalized unit': row[3],
                               'Price': row[4]}, ignore_index=True)
-        print(df1)
+        return df1
