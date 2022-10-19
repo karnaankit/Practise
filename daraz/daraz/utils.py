@@ -9,7 +9,7 @@ def get_name_unit(row1):
     match = re.search(pattern1, row1)
     result = list()
     result.append(str(match.group('amount')) + str(match.group('unit')))
-    if str(match.group('unit')).lower() is 'kg':
+    if str(match.group('unit')).lower() == 'kg':
         result.append(str(int(match.group('amount')) * 1000))
     if str(match.group('unit')).lower() in ['gm', 'g']:
         result.append(str(match.group('amount')))
